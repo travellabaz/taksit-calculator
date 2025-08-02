@@ -182,7 +182,7 @@
 
     if (paymentTypeSwitch.checked) {
         const percent = options[card][selectedIndex].percent / 100;
-        result = paymentAmount + (paymentAmount * percent); // ✅ FIXED
+        result = paymentAmount / (1 - percent); // ✅ CORRECTED
     } else {
         const x = 1 - 0.015; // 1.5% discount
         result = paymentAmount / x;
@@ -196,4 +196,5 @@
     </script>
 
 </body>
+
 </html>
